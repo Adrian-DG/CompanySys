@@ -12,9 +12,9 @@ namespace CompanySys.Controllers
     {
         private CompanyContext db = new CompanyContext();
         // GET: Position
-        public ActionResult Index()
+        public PartialViewResult Index()
         {
-            return View();
+            return PartialView();
         }
 
         public PartialViewResult PositionList()
