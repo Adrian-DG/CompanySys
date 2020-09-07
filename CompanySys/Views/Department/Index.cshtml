@@ -1,0 +1,36 @@
+﻿
+<style>
+	.item { 
+		border: 1px solid black;
+
+	}
+	#dept {
+		width: 95%;
+		height: 80vh;
+		margin: 1em auto;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 10% 10% 80%;
+	}
+	#title {
+		grid-row: 1/2;
+		grid-column: 1/2;
+	}
+	#dept-form {
+		grid-row: 2/3;
+		grid-column: 1/2;
+	}
+	#dept-table {
+		grid-row: 3/4;
+		grid-column: 1/2;
+	}
+</style>
+
+<div id="dept" class="item">
+	<div id="title" class="item">
+		<h3>Departments section</h3>
+		<hr/>
+	</div>
+	<div id="dept-form" class="item">@Html.Action("DepartmentForm", "Department")</div>
+	<div id="dept-table" class="item">@Html.Action("DepartmentList", "Department")</div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model CompanySys.Models.Position
+
+@using (Html.BeginForm("PositionForm", "Position", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+
+	<div class="form-row">
+		<div class="col-md-3">
+			@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder="Position name" } })
+			@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-md-3">
+			@Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control", @placeholder = "Salary" } })
+			@Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-md-3">
+			@Html.DropDownList("DepartmentID", null, htmlAttributes: new { @class = "form-control" })
+			@Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
+		</div>
+		<div class="col-md-2">
+			<input type="submit" value="Create" class="btn btn-block btn-secondary" />
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	
+}
+

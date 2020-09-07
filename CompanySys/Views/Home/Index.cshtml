@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+	
+	#dashboard {
+		width: 100%;
+		height: 100%;
+		border: none;
+		display: grid;
+		grid-template-columns: 10% 90%;
+		grid-template-rows: 100%;
+	}
+	aside {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		border-right: 1px solid gray;
+	}
+		aside ul {
+			width: 95%;
+			height: 40%;
+			margin: 1em auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+		.nav-item {
+			width: 100%;
+			text-align: center;
+		}
+		
+	main {
+		grid-column: 2/3;
+		grid-row: 1/2;
+		border: none;
+	}
+</style>
+
+<div id="dashboard">
+	<!-- aside section -->
+	<aside class="grid-item">
+		<ul class="nav nav-pills mb-3 grid-item" id="pills-tab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Employees</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Positions</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Departments</a>
+			</li>
+		</ul>
+	</aside>
+	<main class="grid-item">
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">@Html.Action("Index", "Employee")</div>
+			<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">@Html.Action("Index", "Position")</div>
+			<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">@Html.Action("Index", "Department")</div>
+		</div>
+	</main>
+</div>

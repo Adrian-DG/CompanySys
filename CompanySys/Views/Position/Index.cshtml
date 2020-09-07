@@ -1,0 +1,34 @@
+﻿<style>
+	.item {
+		border: 1px solid black;
+	}
+	#pos {
+		width: 95%;
+		height: 80vh;
+		margin: 1em auto;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 10% 10% 80%;
+	}
+	#title {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	#pos-form {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+	#pos-table {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+</style>
+
+<div id="pos">
+	<div id="title" class="item">
+		<h3>Positions</h3>
+		<hr />
+	</div>
+	<div id="pos-form" class="item">@Html.Action("PositionForm", "Position")</div>
+	<div id="pos-table" class="item">@Html.Action("PositionList", "Position")</div>
+</div>

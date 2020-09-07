@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CompanySys.Models.Department>
+
+<table class="table table-striped table-hover">
+	<tr class="thead-dark">
+		<th>
+			@Html.DisplayNameFor(model => model.Name)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Positions)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Employees)
+		</th>
+		<th>Options</th>
+	</tr>
+
+@foreach (var item in Model) {
+<tr>
+	<td>
+		@Html.DisplayFor(modelItem => item.Name)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.Positions.Count)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.Employees.Count)
+	</td>
+	<td>
+		@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+		@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+		@Html.ActionLink("Delete", "Delete", new { id = item.ID })
+	</td>
+</tr>
+}
+
+</table>

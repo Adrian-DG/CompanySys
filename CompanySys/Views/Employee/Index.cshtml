@@ -1,0 +1,35 @@
+﻿
+<style>
+	#emp {
+		width: 95%;
+		height: 90vh;
+		margin: 1em auto;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 1fr 2fr 5fr;
+	}
+	
+	#title {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	#emp-form {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	#emp-table {
+		grid-column: 1/2;
+		grid-row: 3/4;
+	}
+</style>
+
+<div id="emp">
+	<div id="title">
+		<h3>Employees</h3>
+		<hr />
+	</div>
+	<div id="emp-form" class="item">@Html.Action("EmployeeForm", "Employee")</div>
+	<div id="emp-table" class="item">@Html.Action("EmployeeList", "Employee")</div>
+</div>
