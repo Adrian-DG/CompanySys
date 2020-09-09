@@ -15,11 +15,17 @@
 		grid-row: 1/2;
 	}
 
-	#profile-img {
-		width: 70%;
-		height: 90%;
+	#image-div {
+		width: 65%;
+		height: 95%;
 		margin-left: 2em;
 		margin-bottom: 0.5em;
+		border: 1px solid gray;
+	}
+
+	#profile-img {
+		width: 100%;
+		height: auto;
 	}
 
 	
@@ -32,6 +38,11 @@
 	.form-row {
 		margin-bottom: 1em;
 	}
+
+	.form-control-file {
+		margin-left: 1em;
+	}
+	
 </style>
 
 
@@ -42,8 +53,10 @@
 	<div id="emp-container">
 
 		<div id="profile" class="item">
-			<img id="profile-img" src="@Url.Content("ImageFile")"/>
-			<input type="file" accept="" name="Upload" id="ImageFile" onchange="ImagePreview(this)" required />
+			<div id="image-div">
+				<img id="profile-img" src="@Url.Content("ImageFile")" alt=""/>
+			</div>
+			<input class="form-control-file" type="file" accept="" name="Upload" id="ImageFile" onchange="ImagePreview(this)" required />
 		</div>
 
 		<div id="empForm" class="item">
